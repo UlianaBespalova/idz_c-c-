@@ -1,0 +1,7 @@
+/home/uliana/Загрузки/CLion-2019.2.3/clion-2019.2.3/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/uliana/hello/2
+CMake Error at CMakeLists.txt:24 (message):
+  Unsupported CPU:
+
+
+-- Configuring incomplete, errors occurred!
+See also "/home/uliana/hello/2/cmake-build-debug/CMakeFiles/CMakeOutput.log".
