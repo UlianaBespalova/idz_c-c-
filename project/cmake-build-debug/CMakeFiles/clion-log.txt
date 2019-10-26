@@ -1,0 +1,13 @@
+/home/uliana/Загрузки/CLion-2019.2.3/clion-2019.2.3/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/uliana/xm/project
+-- Could NOT find PkgConfig (missing: PKG_CONFIG_EXECUTABLE) 
+CMake Error: The following variables are used in this project, but they are set to NOTFOUND.
+Please set them or make sure they are set and tested correctly in the CMake files:
+LIBNEW_INCLUDE_DIR
+   used as include directory in directory /home/uliana/xm/project
+   used as include directory in directory /home/uliana/xm/project
+   used as include directory in directory /home/uliana/xm/project
+   used as include directory in directory /home/uliana/xm/project
+   used as include directory in directory /home/uliana/xm/project
+
+-- Configuring incomplete, errors occurred!
+See also "/home/uliana/xm/project/cmake-build-debug/CMakeFiles/CMakeOutput.log".

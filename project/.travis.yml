@@ -1,0 +1,16 @@
+dist: precise
+sudo: required
+
+language: c++
+
+os:
+  - linux
+
+script:
+  - cd project
+  - gcc -c main.c data.c -std=c99
+  - gcc -o main main.o data.o -L../library -ldyn -Wl,-rpath=../library/ -lpthread -lnew
+  - ./main
+
+
+

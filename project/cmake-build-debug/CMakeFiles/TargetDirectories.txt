@@ -1,0 +1,5 @@
+/home/uliana/xm/project/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/uliana/xm/project/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/uliana/xm/project/cmake-build-debug/CMakeFiles/tests_cppunit.dir
+/home/uliana/xm/project/cmake-build-debug/CMakeFiles/study_std_lib.dir
+/home/uliana/xm/project/cmake-build-debug/CMakeFiles/program.dir

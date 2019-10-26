@@ -1,0 +1,1 @@
+/usr/bin/c++   -std=c++0x -Wall -ggdb3 -g   CMakeFiles/tests_cppunit.dir/tests_cppunit.cpp.o  -o tests_cppunit libstudy_std_lib.a /usr/lib/x86_64-linux-gnu/libcppunit.so /home/uliana/idz/library/libnew.a 
