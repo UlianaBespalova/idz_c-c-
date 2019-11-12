@@ -13,4 +13,4 @@ compiler:
 script:
   - gcc main.c -o main -std=c99
   - ls -l
-  - ./main
+  - ./main 4 0 0 0 4 4 4 4 0
