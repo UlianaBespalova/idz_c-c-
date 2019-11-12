@@ -12,9 +12,6 @@ compiler:
 
 script:
   - gcc main.c -o main -std=c99
-  - ls -l
-  - ./main 
-  - 4 0 0 0 4 4 4 4 0
   
   - valgrind —tool=memcheck ./main
   - valgrind -v --tool=addrcheck --show-reachable=yes --leak-check=full ./main
