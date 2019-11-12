@@ -12,5 +12,6 @@ compiler:
 
 script:
   - gcc main.c -o main -std=c99
+  - ls -l
   - gcc -o main main.o 
   - ./main
