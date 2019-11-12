@@ -8,9 +8,9 @@ os:
 
 compiler:
     - gcc
-    - clang
     - valgrid
 
-
 script:
-    - ls -l
+  - gcc main.c -o main
+  - gcc -o main main.o 
+  - ./main
