@@ -11,6 +11,6 @@ compiler:
     - valgrid
 
 script:
-  - gcc main.c -o main
+  - gcc main.c -o main -std=c99
   - gcc -o main main.o 
   - ./main
