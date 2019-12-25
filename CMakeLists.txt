@@ -1,25 +1,37 @@
-cmake_minimum_required(VERSION 3.15)
-project(2 C)
+cmake_minimum_required(VERSION 3.9.2)
+project(Polygon_calculator)
 
-set(CMAKE_C_STANDARD 11)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_FLAGS "${CMAKE_C_FLAGS} -std=c++0x -Wall -ggdb3")
 
-add_executable(2 main.c)
 
-if ("${TARGET_CPU}" STREQUAL "amd64")
-    set (CMAKE_SIZEOF_VOID_P 8)
+add_executable(Calculator main.c Polygon_calculator.c)
+add_executable(unit_tests unit_tests.cpp Polygon_calculator.c)
 
-    set_property (GLOBAL PROPERTY FIND_LIBRARY_USE_LIB64_PATHS TRUE)
-    set_property (GLOBAL PROPERTY FIND_LIBRARY_USE_LIB32_PATHS FALSE)
-elseif ("${TARGET_CPU}" STREQUAL "x86")
-    set (CMAKE_SIZEOF_VOID_P 4)
 
-    set_property (GLOBAL PROPERTY FIND_LIBRARY_USE_LIB64_PATHS FALSE)
-    set_property (GLOBAL PROPERTY FIND_LIBRARY_USE_LIB32_PATHS TRUE)
 
-    if (GCC)
-        set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -m32")
-        set (CMAKE_C_FLAGS   "${CMAKE_C_FLAGS} -m32")
-    endif ()
-else ()
-    message (FATAL_ERROR "Unsupported CPU: ${TARGET_CPU}")
-endif ()
+include_directories(${GTEST_INCLUDE_DIRS})
+
+configure_file(CMakeLists.txt.in googletest-download/CMakeLists.txt)
+execute_process(COMMAND "${CMAKE_COMMAND}" -G "${CMAKE_GENERATOR}" .
+        WORKING_DIRECTORY "${CMAKE_BINARY_DIR}/googletest-download"
+        )
+execute_process(COMMAND "${CMAKE_COMMAND}" --build .
+        WORKING_DIRECTORY "${CMAKE_BINARY_DIR}/googletest-download"
+        )
+set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
+
+add_subdirectory("${CMAKE_BINARY_DIR}/googletest-src"
+        "${CMAKE_BINARY_DIR}/googletest-build"
+        )
+
+if(CMAKE_VERSION VERSION_LESS 2.8.11)
+    include_directories("${gtest_SOURCE_DIR}/include"
+            "${gmock_SOURCE_DIR}/include")
+endif()
+
+
+#Link with GoogleTest
+target_link_libraries(unit_tests gtest gtest_main)
+#===============================================================
+

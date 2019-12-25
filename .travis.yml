@@ -7,9 +7,13 @@ os:
   - linux
 
 compiler:
-    - gcc
-    - valgrid
+  - g++
 
 script:
-  - gcc main.c -o main -std=c99
-
+  - sudo apt update
+  - sudo apt install valgrind
+  - cmake CMakeLists.txt
+  - make
+  - ls
+  - ./unit_tests
+  - valgrind ./unit_tests
