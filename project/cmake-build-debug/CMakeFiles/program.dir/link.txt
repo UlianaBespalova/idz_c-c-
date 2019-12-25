@@ -1,1 +1,0 @@
-/usr/bin/cc -g   CMakeFiles/program.dir/main.c.o  -o program libstudy_std_lib.a 
